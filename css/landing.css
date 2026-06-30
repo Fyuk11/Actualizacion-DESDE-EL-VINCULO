@@ -1,0 +1,85 @@
+/* === LANDING PRODUCTO (común) === */
+.landing-hero {
+  padding: 8rem 0 4rem;
+  text-align: center;
+}
+
+.landing-hero__title {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700; margin-bottom: 1rem; line-height: 1.2;
+}
+
+.landing-hero__subtitle {
+  font-size: 1.2rem; color: var(--gris-medio);
+  margin-bottom: 1.5rem;
+}
+
+.landing-hero__img {
+  max-width: 400px; margin: 2rem auto 0;
+  border-radius: var(--radius); box-shadow: var(--sombra);
+}
+
+.landing-seccion {
+  padding: 4rem 0;
+}
+
+.landing-seccion__title {
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-weight: 700; margin-bottom: 1.5rem;
+}
+
+/* Lista de beneficios rediseñada */
+.lista-beneficios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem; margin: 2rem 0;
+}
+
+.lista-beneficios li {
+  background: var(--blanco); padding: 1.5rem 1.5rem 1.5rem 3rem;
+  border-radius: var(--radius); box-shadow: var(--sombra);
+  position: relative;
+}
+
+.lista-beneficios li::before {
+  content: "✓";
+  position: absolute; left: 1.2rem; top: 1.5rem;
+  color: var(--verde); font-weight: 700; font-size: 1.2rem;
+}
+
+.lista-beneficios li strong {
+  display: block; margin-bottom: 0.3rem; font-weight: 600;
+}
+
+/* CTA final */
+.cta-bloque {
+  background: var(--verde); color: var(--blanco);
+  padding: 3rem 2rem; border-radius: var(--radius);
+  text-align: center; margin: 3rem 0;
+}
+
+.cta-bloque h3 {
+  font-size: 1.8rem; margin-bottom: 1rem;
+}
+
+.cta-bloque .btn--primary {
+  background: var(--blanco); color: var(--verde);
+  font-weight: 700; margin-top: 1.5rem;
+}
+
+.cta-bloque .btn--primary:hover {
+  background: var(--beige); color: var(--verde-oscuro);
+}
+
+.precio-tag {
+  font-size: 2.5rem; font-weight: 700;
+  color: var(--verde-oscuro); margin: 1rem 0;
+}
+
+.garantia {
+  font-size: 0.9rem; color: var(--beige); margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .lista-beneficios { grid-template-columns: 1fr; }
+}
