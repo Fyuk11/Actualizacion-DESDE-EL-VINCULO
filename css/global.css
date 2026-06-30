@@ -109,6 +109,7 @@ ul {
 .header__logo img {
   height: 36px;
   width: auto;
+  border-radius: 25%;
 }
 
 .header__menu {
@@ -363,4 +364,23 @@ img {
 .section {
   max-width: 100%;
   overflow-x: hidden;
+}
+
+
+
+
+
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.header__logo-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--verde);
+  white-space: nowrap;
 }

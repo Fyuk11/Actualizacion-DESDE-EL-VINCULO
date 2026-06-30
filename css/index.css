@@ -1,4 +1,11 @@
 /* === HERO === */
+.header__brand-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--verde);
+  margin-left: 0.5rem;
+}
+
 .hero {
   position: relative;
   height: 100vh;
@@ -22,8 +29,9 @@
 .hero__overlay {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 100%);
+  background: linear-gradient(90deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.45) 100%);
 }
+
 
 .hero__content {
   position: relative; z-index: 2; max-width: 650px;
@@ -247,5 +255,13 @@
   .comunidad__img img {
     width: 100%;
     height: auto;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .header__brand-name {
+    font-size: 0.9rem;
+    margin-left: 0.3rem;
   }
 }
