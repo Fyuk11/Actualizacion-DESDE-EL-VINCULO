@@ -4,12 +4,19 @@ const navMenu = document.getElementById('nav-menu');
 
 navToggle.addEventListener('click', () => {
   navMenu.classList.toggle('active');
+  // Bloquear scroll cuando el menú está abierto
+  if (navMenu.classList.contains('active')) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
 });
 
 // Cerrar al hacer clic en un enlace
 document.querySelectorAll('.header__link').forEach(link => {
   link.addEventListener('click', () => {
     navMenu.classList.remove('active');
+    document.body.style.overflow = '';
   });
 });
 
@@ -17,6 +24,7 @@ document.querySelectorAll('.header__link').forEach(link => {
 document.addEventListener('click', (e) => {
   if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
     navMenu.classList.remove('active');
+    document.body.style.overflow = '';
   }
 });
 
