@@ -329,3 +329,38 @@ ul {
     font-size: 0.8rem;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+/* Evitar zoom indeseado y desbordamiento */
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Footer: evitar corte de texto */
+.footer__copy {
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* Imágenes responsive global (ya existe, pero reforzamos) */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Ajuste para que las secciones no se desborden */
+.section {
+  max-width: 100%;
+  overflow-x: hidden;
+}

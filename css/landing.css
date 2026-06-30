@@ -90,3 +90,9 @@
 @media (max-width: 768px) {
   .lista-beneficios { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 768px) {
+  .landing-hero__img {
+    max-width: 90%;
+  }
+}

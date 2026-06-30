@@ -38,3 +38,9 @@
   max-width: 800px; margin: 2rem auto;
   border-radius: var(--radius); box-shadow: var(--sombra);
 }
+
+@media (max-width: 768px) {
+  .comunidad-screenshot {
+    max-width: 100%;
+  }
+}

@@ -230,4 +230,22 @@
   .newsletter__container {
     flex-direction: column;
   }
+
+  
+}
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: 1.8rem;
+  }
+  .producto-card__img img {
+    height: 180px;
+  }
+  .newsletter__img img {
+    width: 100%;
+    height: auto;
+  }
+  .comunidad__img img {
+    width: 100%;
+    height: auto;
+  }
 }
