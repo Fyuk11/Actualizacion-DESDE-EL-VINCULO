@@ -118,16 +118,12 @@ ul {
   align-items: center;
   gap: 0.6rem;
   text-decoration: none;
-  /* Evita que el texto del logo se estire */
-  max-width: calc(100% - 60px);
-  overflow: hidden;
 }
 
 .header__logo img {
   height: 32px;
   width: auto;
   border-radius: 25%;
-  flex-shrink: 0;
 }
 
 .header__logo-text {
@@ -135,8 +131,6 @@ ul {
   font-weight: 600;
   color: var(--verde);
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .header__menu {
@@ -177,10 +171,7 @@ ul {
   background: none;
   border: none;
   cursor: pointer;
-  flex-shrink: 0;
 }
-
-
 
 .header__toggle span {
   width: 25px;
@@ -211,26 +202,12 @@ ul {
   border-top: 1px solid rgba(0,0,0,0.05);
 }
 
-/* === FOOTER === */
+/* === FOOTER (NUEVO DISEÑO) === */
 .footer {
   background: var(--gris-oscuro);
   color: var(--blanco);
   padding: 2.5rem 0;
-  overflow: visible;          /* no hidden */
-}
-
-.footer__copy {
-  width: 100%;
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 0.8rem;
-  opacity: 0.5;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding: 1.5rem 1rem 0;
-  word-break: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
-  white-space: normal;
+  overflow: visible;          /* Nada de hidden */
 }
 
 .footer__container {
@@ -287,6 +264,20 @@ ul {
   fill: var(--blanco);
 }
 
+.footer__copy {
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: clamp(0.7rem, 2.5vw, 0.8rem);
+  opacity: 0.6;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 1.5rem 1.5rem 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  white-space: normal;
+  line-height: 1.4;
+}
 
 /* === FOOTER EMAIL === */
 .footer__email {
@@ -329,16 +320,16 @@ ul {
   .footer__brand p:last-child { max-width: 100%; }
   .footer__email-text { font-size: 0.8rem; }
   .footer__copy {
+    padding: 1rem 1rem 0;
     font-size: 0.7rem;
   }
-
 }
 
 @media (max-width: 768px) {
   .header__nav {
     position: fixed;
     top: 70px;
-    left: -100%;               /* oculto a la izquierda */
+    left: -100%;
     width: 80%;
     max-width: 300px;
     height: calc(100vh - 70px);
@@ -346,21 +337,12 @@ ul {
     box-shadow: 2px 0 20px rgba(0,0,0,0.1);
     transition: left var(--transition);
     padding: 2rem;
-    z-index: 1001;
-    overflow: hidden;          /* sin barra de scroll interna */
+    z-index: 999;
+    overflow: hidden;
   }
-  .header__nav.active {
-    left: 0;
-  }
-  .header__toggle {
-    display: flex;
-    z-index: 1002;
-  }
-  .header__menu {
-    flex-direction: column;
-    gap: 1.5rem;
-    height: 100%;              /* usa todo el alto disponible */
-  }
+  .header__nav.active { left: 0; }
+  .header__menu { flex-direction: column; gap: 1.5rem; }
+  .header__toggle { display: flex; }
   .section { padding: 4rem 0; }
 }
 
@@ -377,7 +359,6 @@ ul {
   body { font-size: 1.05rem; }
 }
 
-/* Ancla del contacto */
 #contacto {
   scroll-margin-top: 100px;
 }
