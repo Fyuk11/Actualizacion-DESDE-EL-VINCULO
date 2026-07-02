@@ -216,7 +216,7 @@ ul {
   background: var(--gris-oscuro);
   color: var(--blanco);
   padding: 2.5rem 0;
-  overflow: visible;
+  overflow: visible;          /* no hidden */
 }
 
 .footer__copy {
@@ -226,11 +226,11 @@ ul {
   font-size: 0.8rem;
   opacity: 0.5;
   border-top: 1px solid rgba(255,255,255,0.1);
-  padding: 1.5rem 1rem 0;   /* agregamos un poco de padding lateral */
+  padding: 1.5rem 1rem 0;
   word-break: break-word;
   overflow-wrap: break-word;
   hyphens: auto;
-  white-space: normal;       /* aseguramos que haga saltos de línea */
+  white-space: normal;
 }
 
 .footer__container {
