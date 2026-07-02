@@ -320,31 +320,25 @@ ul {
   .header__nav {
     position: fixed;
     top: 70px;
-    left: -100%;
+    left: 0;                      /* lo anclamos al borde izquierdo */
     width: 80%;
     max-width: 300px;
     height: calc(100vh - 70px);
     background: var(--blanco);
     box-shadow: 2px 0 20px rgba(0,0,0,0.1);
-    transition: left var(--transition);
+    transform: translateX(-100%); /* oculto hacia la izquierda */
+    transition: transform 0.3s ease;
     padding: 2rem;
     z-index: 999;
     overflow-y: auto;
     overflow-x: hidden;
-    box-sizing: border-box; /* asegura que el padding no expanda el ancho */
   }
   .header__nav.active {
-    left: 0;
-    /* Fuerza a no desbordar */
-    width: 80%;
-    max-width: 300px;
-    right: auto;
+    transform: translateX(0);     /* aparece deslizándose */
   }
   .header__menu {
     flex-direction: column;
     gap: 1.5rem;
-    /* Para que el texto largo no desborde */
-    word-break: break-word;
   }
   .header__toggle { display: flex; }
   .section { padding: 4rem 0; }
