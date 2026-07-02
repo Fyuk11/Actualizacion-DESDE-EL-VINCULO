@@ -230,7 +230,7 @@ ul {
 .footer__brand p:last-child {
   font-size: 0.85rem;
   opacity: 0.75;
-  max-width: 250px;
+    max-width: 100%;           /* antes 250px, ahora usa todo el ancho disponible */
   white-space: normal;
   word-break: break-word;
   overflow-wrap: break-word;
@@ -297,6 +297,8 @@ ul {
 
 .footer__email-text {
   font-size: 0.85rem;
+  word-break: break-all;
+  overflow-wrap: anywhere;
 }
 
 /* === ANIMACIONES BASE === */
@@ -317,8 +319,14 @@ ul {
   .btn { padding: 0.7rem 1.4rem; font-size: 0.9rem; }
   .section { padding: 4rem 0; }
   .footer__container { flex-direction: column; text-align: center; }
-  .footer__brand p:last-child { max-width: 100%; }
-  .footer__email-text { font-size: 0.8rem; }
+ 
+  .footer__brand p:last-child {
+    font-size: 0.8rem;
+    max-width: 100%;
+  }
+  .footer__email-text {
+    font-size: 0.75rem;
+  }
   .footer__copy {
     padding: 1rem 1rem 0;
     font-size: 0.7rem;
