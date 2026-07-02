@@ -31,6 +31,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   max-width: 100vw;
+  position: relative;
 }
 
 img, video, iframe {
@@ -107,6 +108,7 @@ ul {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
+  max-width: 100%;
 }
 
 .header__logo {
@@ -327,6 +329,8 @@ ul {
     transition: left var(--transition);
     padding: 2rem;
     z-index: 999;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
   .header__nav.active { left: 0; }
   .header__menu { flex-direction: column; gap: 1.5rem; }
@@ -345,4 +349,9 @@ ul {
 @media (min-width: 1441px) {
   .container, .footer__container { max-width: 1400px; }
   body { font-size: 1.05rem; }
+}
+
+/* Ancla del contacto */
+#contacto {
+  scroll-margin-top: 100px;
 }
