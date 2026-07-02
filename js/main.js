@@ -52,3 +52,17 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.section, .producto-card, .testimonio, .beneficio-item').forEach(el => {
   observer.observe(el);
 });
+
+
+// Slider automático de la comunidad
+const slider = document.querySelector('.slider');
+if (slider) {
+  const images = slider.querySelectorAll('.slider__img');
+  let current = 0;
+
+  setInterval(() => {
+    images[current].classList.remove('active');
+    current = (current + 1) % images.length;
+    images[current].classList.add('active');
+  }, 4000); // cambia cada 4 segundos
+}
