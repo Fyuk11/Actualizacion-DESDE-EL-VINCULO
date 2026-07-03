@@ -39,7 +39,7 @@ document.addEventListener('click', (e) => {
 // =============================================
 //  FORMULARIO NEWSLETTER (SIMULACIÓN)
 // =============================================
-const formNewsletter = document.getElementById('form-newsletter');
+/*const formNewsletter = document.getElementById('form-newsletter');
 const mensajeNewsletter = document.getElementById('newsletter-mensaje');
 
 if (formNewsletter) {
@@ -51,7 +51,71 @@ if (formNewsletter) {
       mensajeNewsletter.style.display = 'none';
     }, 5000);
   });
+}*/
+
+// =============================================
+//  FORMULARIO NEWSLETTER (INTEGRACIÓN REAL MAILERLITE)
+// =============================================
+const formNewsletter = document.getElementById('form-newsletter');
+const mensajeNewsletter = document.getElementById('newsletter-mensaje');
+
+if (formNewsletter) {
+  formNewsletter.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Obtener los valores
+    const nombre = formNewsletter.querySelector('input[name="fields[name]"]')?.value.trim();
+    const email = formNewsletter.querySelector('input[name="fields[email]"]')?.value.trim();
+
+    if (!nombre || !email) return; // Validación simple
+
+    // URL de tu NUEVO formulario (nombre + email) en MailerLite
+    const MAILERLITE_URL = 'https://assets.mailerlite.com/jsonp/2040570/forms/191981371002979466/subscribe';
+
+    const formData = new FormData();
+    formData.append('fields[name]', nombre);
+    formData.append('fields[email]', email);
+    formData.append('ml-submit', '1');
+    formData.append('anticsrf', 'true');
+
+    try {
+      const response = await fetch(MAILERLITE_URL, {
+        method: 'POST',
+        body: formData,
+        mode: 'cors'
+      });
+
+      if (response.ok) {
+        // Éxito
+        mensajeNewsletter.style.display = 'block';
+        formNewsletter.reset();
+        setTimeout(() => {
+          mensajeNewsletter.style.display = 'none';
+        }, 5000);
+      } else {
+        // Error del servidor
+        mensajeNewsletter.textContent = 'Hubo un error. Intentá de nuevo.';
+        mensajeNewsletter.style.display = 'block';
+        setTimeout(() => {
+          mensajeNewsletter.style.display = 'none';
+        }, 4000);
+      }
+    } catch (error) {
+      // Error de red
+      mensajeNewsletter.textContent = 'Error de conexión. Revisá tu internet.';
+      mensajeNewsletter.style.display = 'block';
+      setTimeout(() => {
+        mensajeNewsletter.style.display = 'none';
+      }, 4000);
+      console.error(error);
+    }
+  });
 }
+
+
+
+
+
 
 // =============================================
 //  ANIMACIÓN FADE-IN AL HACER SCROLL
