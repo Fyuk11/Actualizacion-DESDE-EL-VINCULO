@@ -153,21 +153,12 @@ if (slider) {
 //  Si la URL tiene #contacto → va al footer
 //  Si no tiene hash → va al inicio (hero)
 // =============================================
-history.scrollRestoration = 'manual'; // evita que el navegador recuerde la posición de scroll
+// =============================================
+//  SCROLL AL CARGAR LA PÁGINA (siempre al hero)
+// =============================================
+history.scrollRestoration = 'manual';
 
 window.addEventListener('load', () => {
-  const hash = window.location.hash;
-  if (hash === '#contacto') {
-    const contacto = document.getElementById('contacto');
-    if (contacto) {
-      setTimeout(() => {
-        const yOffset = -100; // compensación por el header fijo
-        const y = contacto.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      }, 100);
-    }
-  } else {
-    // Si no hay ancla, forzamos ir al inicio
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  }
+  // Siempre ir al inicio, sin importar el hash
+  window.scrollTo({ top: 0, behavior: 'instant' });
 });
