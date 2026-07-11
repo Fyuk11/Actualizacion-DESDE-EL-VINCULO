@@ -1,70 +1,126 @@
 /* === PÁGINA COMUNIDAD === */
+
+/* Hero */
 .comunidad-hero {
   background: var(--beige);
   padding: 8rem 0 4rem;
   text-align: center;
 }
 
+.comunidad-hero__badge {
+  display: inline-block;
+  background: var(--verde);
+  color: white;
+  padding: 0.3rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
 .comunidad-hero__title {
   font-size: clamp(2rem, 5vw, 2.8rem);
-  font-weight: 700; margin-bottom: 1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 .comunidad-hero__subtitle {
-  font-size: 1.2rem; color: var(--gris-medio);
-  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  color: var(--gris-medio);
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+.comunidad-hero__stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.comunidad-hero__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comunidad-hero__numero {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--verde);
+  line-height: 1;
+}
+
+.comunidad-hero__label {
+  font-size: 0.9rem;
+  color: var(--gris-medio);
+  margin-top: 0.3rem;
+}
+
+.comunidad-hero__urgencia {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #e67e22;
+  font-weight: 500;
+}
+
+/* Beneficios */
 .beneficios-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem; margin: 3rem 0;
+  gap: 2rem;
+  margin: 3rem 0;
 }
 
 .beneficio-item {
-  background: var(--blanco); padding: 2rem;
-  border-radius: var(--radius); box-shadow: var(--sombra);
+  background: var(--blanco);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.beneficio-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.beneficio-item__icono {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .beneficio-item h4 {
-  margin-bottom: 0.5rem; font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
 }
 
 .beneficio-item p {
   color: var(--gris-medio);
+  font-size: 0.95rem;
 }
 
-.comunidad-screenshot {
-  max-width: 800px; margin: 2rem auto;
-  border-radius: var(--radius); box-shadow: var(--sombra);
-}
-
-@media (max-width: 768px) {
-  .comunidad-screenshot {
-    max-width: 100%;
-  }
-}
-
-
-
-/* === SLIDER COMUNIDAD === */
-/* === SLIDER COMUNIDAD === */
-.slider {
+/* Slider de capturas */
+.comunidad-galeria .slider {
   max-width: 800px;
   margin: 2rem auto 0;
   position: relative;
   overflow: hidden;
   border-radius: var(--radius);
   box-shadow: var(--sombra);
-  aspect-ratio: 16 / 9;   /* esta línea es clave */
+  aspect-ratio: 16 / 9;
 }
 
-.slider__track {
+.comunidad-galeria .slider__track {
   position: relative;
   width: 100%;
 }
 
-.slider__img {
+.comunidad-galeria .slider__img {
   display: none;
   width: 100%;
   height: auto;
@@ -72,6 +128,61 @@
   border-radius: var(--radius);
 }
 
-.slider__img.active {
+.comunidad-galeria .slider__img.active {
   display: block;
+}
+
+/* Testimonios */
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.testimonio-card {
+  background: var(--blanco);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  text-align: center;
+}
+
+.testimonio-card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+}
+
+.testimonio-card p {
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.testimonio-card cite {
+  font-weight: 600;
+  color: var(--verde);
+}
+
+/* CTA final */
+.cta-comunidad {
+  padding: 4rem 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .comunidad-hero__stats {
+    gap: 1.5rem;
+  }
+  .comunidad-hero__numero {
+    font-size: 2rem;
+  }
+  .beneficios-grid {
+    grid-template-columns: 1fr;
+  }
+  .testimonios-grid {
+    grid-template-columns: 1fr;
+  }
 }
