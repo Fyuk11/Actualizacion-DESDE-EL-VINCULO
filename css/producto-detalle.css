@@ -1,0 +1,547 @@
+/* ============================================
+   ESTILOS PARA PÁGINA DE PRODUCTO DETALLADA
+   (Curso Completo, Protocolos, Pack)
+   ============================================ */
+
+.producto-detalle {
+  padding-top: 80px;            /* altura del header fijo */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === HERO (grid + sticky) === */
+.producto-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  padding: 2rem 1rem;
+}
+
+.producto-hero__galeria {
+  position: sticky;
+  top: 90px;                   /* justo debajo del header */
+}
+
+.producto-hero__info {
+  /* sin reglas especiales, solo hereda */
+}
+
+/* --- GALERÍA --- */
+.galeria__principal {
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  margin-bottom: 1rem;
+}
+
+.galeria__principal img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.galeria__miniaturas {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.galeria__miniatura {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.galeria__miniatura img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.galeria__miniatura--activa {
+  border-color: var(--verde);
+}
+
+/* --- INFORMACIÓN DEL PRODUCTO --- */
+.producto-hero__badge {
+  display: inline-block;
+  background: var(--verde);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.producto-hero__titulo {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.producto-hero__checklist {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.producto-hero__checklist li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.producto-hero__checklist li::before {
+  content: "✓";
+  color: var(--verde);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Bundles */
+.producto-hero__bundles {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.bundle {
+  border: 2px solid #e0e0e0;
+  border-radius: var(--radius);
+  padding: 1rem;
+  cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.bundle--activo {
+  border-color: var(--verde);
+  box-shadow: 0 0 10px rgba(107,142,123,0.3);
+}
+
+.bundle__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.bundle__nombre {
+  font-weight: 600;
+}
+
+.bundle__precio {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--verde-oscuro);
+}
+
+.bundle__descripcion {
+  font-size: 0.9rem;
+  color: var(--gris-medio);
+}
+
+/* Botón de compra */
+.producto-hero__cta {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.producto-hero__urgencia {
+  color: #e67e22;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Credibilidad */
+.producto-hero__credibilidad {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.credibilidad__instructor {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.credibilidad__texto {
+  font-size: 0.9rem;
+}
+
+.credibilidad__texto strong {
+  display: block;
+}
+
+.sellos {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.sello {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  color: var(--gris-medio);
+}
+
+/* FAQ rápida en el hero */
+.hero-faq {
+  margin-top: 1.5rem;
+}
+
+.hero-faq__pregunta {
+  border-top: 1px solid #eee;
+  padding: 0.8rem 0;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-faq__pregunta::after {
+  content: "+";
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.hero-faq__pregunta--abierta::after {
+  content: "−";
+}
+
+.hero-faq__respuesta {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  font-size: 0.9rem;
+  color: var(--gris-medio);
+  padding-left: 1rem;
+}
+
+.hero-faq__respuesta--visible {
+  max-height: 1000px;            /* suficiente para respuestas largas */
+}
+
+/* === SECCIONES POSTERIORES (TIMELINE, MÓDULOS, ETC.) === */
+.timeline {
+  padding: 4rem 1rem;
+  background: var(--beige);
+}
+.timeline__titulo {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+}
+.timeline__contenedor {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.timeline__hito {
+  flex: 1 1 200px;
+  text-align: center;
+}
+.timeline__hito img {
+  width: 200px;                /* un poco más grande */
+  height: 200px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;         /* circular */
+  border: 4px solid var(--verde); /* marco verde */
+  box-shadow: 0 6px 20px rgba(107, 142, 123, 0.25); /* sombra sutil */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.timeline__hito:hover img {
+  transform: scale(1.08);     /* pequeño zoom al pasar */
+}
+.timeline__hito h4 {
+  margin-bottom: 0.5rem;
+}
+
+.modulos {
+  padding: 4rem 1rem;
+}
+.modulos__titulo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.modulos__slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+}
+/*.modulo-card {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  padding: 1.5rem;
+  text-align: center;
+}
+.modulo-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+} */
+
+
+.modulo-card {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  overflow: hidden;           /* para que la imagen respete el borde */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modulo-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.modulo-card img {
+  width: 100%;               /* ocupa todo el ancho */
+  height: 160px;             /* altura fija para que todas sean iguales */
+  object-fit: cover;
+  display: block;
+}
+
+/* El contenido textual debajo de la imagen */
+.modulo-card h3,
+.modulo-card h4,
+.modulo-card p {
+  padding: 0 1rem;
+}
+.modulo-card h3 {
+  margin-top: 0.8rem;
+}
+.modulo-card h4 {
+  margin-bottom: 0.3rem;
+}
+.modulo-card p {
+  margin-bottom: 1rem;
+  color: var(--gris-medio);
+  font-size: 0.9rem;
+}
+
+/* Ocultar la barra de scroll en el slider */
+.modulos__slider {
+  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;       /* IE/Edge */
+}
+.modulos__slider::-webkit-scrollbar {
+  display: none;                  /* Chrome/Safari */
+}
+
+/* Contenedor de las flechas */
+.modulos__contenedor {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Flechas */
+.modulos__flecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--verde);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: background 0.3s, transform 0.3s;
+  z-index: 2;
+}
+
+.modulos__flecha:hover {
+  background: var(--verde-oscuro);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.modulos__flecha--izq {
+  left: 0;
+}
+
+.modulos__flecha--der {
+  right: 0;
+}
+
+/* En móviles podemos ocultar las flechas o hacerlas más pequeñas */
+@media (max-width: 768px) {
+  .modulos__flecha {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+  }
+}
+
+.testimonios-visuales {
+  padding: 4rem 1rem;
+  background: var(--beige);
+}
+.testimonios-visuales__titulo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.carrusel-testimonios {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+}
+.carrusel-testimonios__item {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+}
+.carrusel-testimonios__item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.resultados {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+.resultados__stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.resultados__stat {
+  flex: 1 1 200px;
+}
+.resultados__stat .numero {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--verde);
+}
+
+.testimonios-extendidos {
+  padding: 4rem 1rem;
+  background: var(--beige);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.testimonio-extendido {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+}
+.testimonio-extendido img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.por-que {
+  padding: 4rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.por-que__imagen {
+  flex: 1 1 300px;
+}
+.por-que__imagen img {
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+}
+.por-que__texto {
+  flex: 1 1 300px;
+}
+
+.faq-final {
+  padding: 4rem 1rem;
+  background: var(--beige);
+}
+.faq-final__pregunta {
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 0;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+}
+.faq-final__pregunta::after {
+  content: "+";
+}
+.faq-final__pregunta--abierta::after {
+  content: "−";
+}
+.faq-final__respuesta {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s;
+  padding-left: 1rem;
+}
+.faq-final__respuesta--visible {
+  max-height: 1000px;            /* mismo espacio generoso */
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .producto-hero {
+    grid-template-columns: 1fr;
+  }
+  .producto-hero__galeria {
+    position: static;
+    margin-bottom: 2rem;
+  }
+  .timeline__contenedor {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+

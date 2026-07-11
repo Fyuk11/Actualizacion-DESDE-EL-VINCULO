@@ -3,99 +3,259 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Curso Completo | Desde el Vínculo</title>
-  <meta name="description" content="Curso digital 'Educando desde el Vínculo'. 6 módulos para transformar tu convivencia con un enfoque sistémico y emocional. 18 USD.">
+  <title>Curso Digital: Educando desde el Vínculo | Desde el Vínculo</title>
+  <meta name="description" content="Curso digital interactivo 'Educando desde el Vínculo'. 5 ejes clave bajo un enfoque Sistémico-Emocional-Cognitivo para transformar tu convivencia. 18 USD.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://desdeelvinculo.netlify.app/curso-completo.html">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Desde el Vínculo">
-  <meta property="og:title" content="Curso Completo – Desde el Vínculo | 18 USD">
-  <meta property="og:description" content="6 módulos para transformar tu convivencia con tu perro desde el vínculo emocional.">
-  <meta property="og:image" content="https://desdeelvinculo.netlify.app/img/og-image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:title" content="Curso Digital: Educando desde el Vínculo | 18 USD">
+  <meta property="og:description" content="Un programa profundo para comprender el mundo interno de tu perro y construir una relación sana.">
+  <meta property="og:image" content="https://desdeelvinculo.netlify.app/img/og-image.webp">
   <meta property="og:url" content="https://desdeelvinculo.netlify.app/curso-completo.html">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Curso Completo – Desde el Vínculo | 18 USD">
-  <meta name="twitter:description" content="6 módulos para transformar tu convivencia con tu perro desde el vínculo emocional.">
-  <meta name="twitter:image" content="https://desdeelvinculo.netlify.app/img/og-image.webp">
-
   <meta name="google-site-verification" content="YnLXtKM4-w28fluN7Jt4KjhZyx0626GhNaNaI8vtAmA">
   <link rel="icon" type="image/png" sizes="512x512" href="img/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="img/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/producto-detalle.css">
 </head>
 <body>
   <header class="header">
     <div class="container header__container">
-      <a href="index.html" class="header__logo"><img src="img/logo.png" alt="Desde el Vínculo" width="140" height="40">
-      <span class="header__logo-text">Desde el Vínculo</span></a>
+      <a href="index.html" class="header__logo">
+        <img src="img/logo.png" alt="Desde el Vínculo" width="40" height="40">
+        <span class="header__logo-text">Desde el Vínculo</span>
+      </a>
       <nav class="header__nav" id="nav-menu">
         <ul class="header__menu">
           <li><a href="index.html" class="header__link">Inicio</a></li>
           <li><a href="productos.html" class="header__link">Productos</a></li>
           <li><a href="comunidad.html" class="header__link">Comunidad</a></li>
-          <li><a href="#contacto" class="header__link">Contacto</a></li>
+          <li><a href="index.html#contacto" class="header__link">Contacto</a></li>
         </ul>
       </nav>
-      <button class="header__toggle" id="nav-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+      <button class="header__toggle" id="nav-toggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <main>
-    <section class="landing-hero bg-beige">
-      <div class="container">
-        <h1 class="landing-hero__title">Curso Digital: Educando desde el Vínculo</h1>
-        <p class="landing-hero__subtitle">Educación Canina Consciente desde un enfoque Sistémico–Emocional–Cognitivo.</p>
-        <img src="img/lunalunasmile.webp" alt="Tutor y perro conectados" class="landing-hero__img" loading="lazy">
+  <main class="producto-detalle">
+    <!-- ========== HERO ========== -->
+    <section class="producto-hero">
+      <!-- Galería (sticky) -->
+      <div class="producto-hero__galeria">
+        <div class="galeria__principal">
+          <img src="img/Curso completo/curso-completo1.webp" alt="Curso Completo" loading="lazy" id="img-principal">
+        </div>
+        <div class="galeria__miniaturas" id="thumbnails"></div>
       </div>
-    </section>
-    <section class="landing-seccion bg-white">
-      <div class="container">
-        <h2 class="landing-seccion__title">Un programa para transformar tu mirada</h2>
-        <p>Creemos que la educación canina no se trata de imponer, sino de acompañar. Este curso combina teoría, reflexión y práctica para integrar el conocimiento de manera vivencial.</p>
-      </div>
-    </section>
-    <section class="landing-seccion bg-verde-claro">
-      <div class="container">
-        <h2 class="landing-seccion__title">Los 5 Ejes del Curso</h2>
-        <ul class="lista-beneficios">
-          <li><strong>🌱 Eje 1:</strong> El vínculo como base del aprendizaje. Confianza y cooperación voluntaria.</li>
-          <li><strong>💬 Eje 2:</strong> Emociones y comunicación. Alfabetización canina y sintaxis corporal.</li>
-          <li><strong>🧠 Eje 3:</strong> Autonomía y bienestar. Libre elección, olfato activo y equilibrio hormonal.</li>
-          <li><strong>🏡 Eje 4:</strong> Convivencia consciente. Rutinas predecibles y diseño ambiental libre de estrés.</li>
-          <li><strong>🔄 Eje 5:</strong> Integración final. Transformación mutua: lo que tu perro te enseña a vos.</li>
+
+      <!-- Info derecha -->
+      <div class="producto-hero__info">
+        <span class="producto-hero__badge">+500 familias transformadas</span>
+        <h1 class="producto-hero__titulo">Curso Digital: Educando desde el Vínculo</h1>
+
+        <ul class="producto-hero__checklist">
+          <li>✅ Material interactivo completo dividido en 5 ejes clave</li>
+          <li>✅ Lectura fluida con profundo sustento etológico y práctico</li>
+          <li>✅ Acceso inmediato, descargable y de por vida</li>
+          <li>✅ Soporte para dudas dentro de nuestra comunidad</li>
         </ul>
+
+        <!-- Bundles -->
+        <div class="producto-hero__bundles">
+          <div class="bundle bundle--activo" data-precio="18">
+            <div class="bundle__header">
+              <span class="bundle__nombre">Solo el Curso Digital</span>
+              <span class="bundle__precio">18 USD</span>
+            </div>
+            <p class="bundle__descripcion">El libro digital interactivo completo + actualizaciones futuras.</p>
+          </div>
+          <div class="bundle" data-precio="24">
+            <div class="bundle__header">
+              <span class="bundle__nombre">Pack Convivencia Completa</span>
+              <span class="bundle__precio">24 USD</span>
+            </div>
+            <p class="bundle__descripcion">Curso Digital + Protocolos Express de Cachorros y Seniors (El mejor precio).</p>
+          </div>
+        </div>
+
+        <a href="https://hotmart.com/es/marketplace/productos/educando-desde-el-vinculo-curso-de-educacion-canina-consciente/K102549535T" class="btn btn--primary producto-hero__cta" target="_blank" id="btn-comprar">
+          Comprar ahora – 18 USD
+        </a>
+        <p class="producto-hero__urgencia">⏳ Accedé al precio promocional por tiempo limitado</p>
+
+        <!-- Credibilidad -->
+        <div class="producto-hero__credibilidad">
+          <img src="img/Curso completo//instructor.webp" alt="Rodrigo - Especialista en Comportamiento Canino" class="credibilidad__instructor">
+          <div class="credibilidad__texto">
+            <strong>Rodrigo</strong>
+            Educador Canino · Enfoque Sistémico-Cognitivo
+          </div>
+        </div>
+
+        <div class="sellos">
+          <span class="sello"><img src="img/Curso completo/educacion-en-linea.png" width="20" alt=""> 100% digital e interactivo</span>
+          <span class="sello"><img src="img/Curso completo/control-de-acceso.png" width="20" alt=""> Descargable de por vida</span>
+          <span class="sello"><img src="img/Curso completo/garantia.png" width="20" alt=""> Garantía de satisfacción</span>
+        </div>
+
+        <!-- FAQ rápida -->
+        <div class="hero-faq">
+          <div class="hero-faq__pregunta">¿Qué formato tiene el curso?</div>
+          <div class="hero-faq__respuesta">
+            <p>Es un material digital interactivo (Ebook) de lectura fluida y profunda, diseñado minuciosamente para que puedas avanzar a tu ritmo e integrar la teoría etológica con ejercicios prácticos en el día a día.</p>
+          </div> <br>
+          <div class="hero-faq__pregunta">¿Cómo accedo al contenido?</div>
+          <div class="hero-faq__respuesta">
+            <p>Inmediatamente después de realizar el pago seguro en Hotmart, te llegará un correo electrónico con las credenciales y el enlace de acceso directo para descargar y leer el material en cualquier dispositivo.</p>
+          </div><br>
+          <div class="hero-faq__pregunta">¿Tiene garantía?</div>
+          <div class="hero-faq__respuesta">
+            <p>Sí, contás con una garantía de satisfacción de 7 días respaldada por Hotmart. Si sentís que el enfoque respetuoso y consciente no es lo que buscabas, podés solicitar el reembolso total sin vueltas.</p>
+          </div>
+        </div>
       </div>
     </section>
-    <section class="landing-seccion bg-white">
-      <div class="container">
-        <h2 class="landing-seccion__title">¿Para quién es?</h2>
-        <p>Para tutores que desean sanar la convivencia y para educadores, adiestradores y profesionales que buscan incorporar una mirada más humana, sistémica y afectiva a su práctica.</p>
-        <blockquote class="testimonio" style="margin-top: 2rem;">
-          <p>"Cambió mi forma de pasear, de comunicarme y de convivir. Una lectura indispensable para cualquiera que ame a los animales."</p>
-          <cite>— Natalia S. y Bruno</cite>
-        </blockquote>
-      </div>
+
+    <!-- ========== TIMELINE ========== -->
+    <section class="timeline">
+    <h2 class="timeline__titulo">Tu proceso de transformación mutua</h2>
+    <div class="timeline__contenedor">
+        <div class="timeline__hito">
+        <img src="img/Curso completo/fase1.webp" alt="Comprensión y Cambio de Foco" loading="lazy">
+        <h4>Fase 1: Consciencia</h4>
+        <p>Derribás mitos antiguos, entendés las bases biológicas del apego y aprendés a leer la sintaxis corporal de tu perro.</p>
+        </div>
+        <div class="timeline__hito">
+        <img src="img/Curso completo/fase2.webp" alt="Bienestar y Elección" loading="lazy">
+        <h4>Fase 2: Bienestar</h4>
+        <p>Implementás rutinas de olfato activo, propiciás la libre elección y reestructurás el hogar con un diseño ambiental libre de estrés.</p>
+        </div>
+        <div class="timeline__hito">
+        <img src="img/Curso completo/fase3.webp" alt="Convivencia Consciente" loading="lazy">
+        <h4>Fase 3: Integración</h4>
+        <p>Consolidás un vínculo sano basado en la coherencia emocional del tutor y la cooperación voluntaria del perro. Sin tirones ni frustración.</p>
+        </div>
+    </div>
     </section>
-    <div class="cta-bloque">
-      <div class="container">
-        <h3>Transformá tu convivencia para siempre</h3>
-        <p>Accedé ahora al curso completo y empezá a construir el vínculo que soñás.</p>
-        <p class="precio-tag">18 USD</p>
-        <p class="garantia">Acceso inmediato. Pago seguro con Hotmart.</p>
-        <a href="https://hotmart.com/es/marketplace/productos/educando-desde-el-vinculo-curso-de-educacion-canina-consciente/K102549535T" target="_blank" rel="noopener" class="btn btn--primary">Comprar ahora</a>
+
+ <!-- ========== MÓDULOS (SLIDER) ========== -->
+<!-- ========== MÓDULOS (SLIDER) ========== -->
+<section class="modulos">
+  <h2 class="modulos__titulo">Los 5 ejes fundamentales del programa</h2>
+  <div class="modulos__contenedor">
+    <button class="modulos__flecha modulos__flecha--izq" aria-label="Anterior">←</button>
+    <div class="modulos__slider">
+      <div class="modulo-card">
+        <img src="img/Curso completo/eje1.webp" alt="Eje 1" loading="lazy">
+        <h3>Eje 1</h3>
+        <h4>El vínculo como base del aprendizaje</h4>
+        <p>Los cimientos de la confianza mutua. Cómo se forma y se fortalece la relación afectiva para lograr una cooperación totalmente voluntaria.</p>
+      </div>
+      <div class="modulo-card">
+        <img src="img/Curso completo/eje2.webp" alt="Eje 2" loading="lazy">
+        <h3>Eje 2</h3>
+        <h4>Emociones y comunicación</h4>
+        <p>Alfabetización canina avanzada. Aprendé a decodificar con precisión las emociones, micro-señales de estrés y calma que hay detrás de cada conducta.</p>
+      </div>
+      <div class="modulo-card">
+        <img src="img/Curso completo/eje3.webp" alt="Eje 3" loading="lazy">
+        <h3>Eje 3</h3>
+        <h4>Autonomía y bienestar</h4>
+        <p>Herramientas prácticas para equilibrar el sistema hormonal de tu perro mediante espacios de libre elección, paseos coherentes y estimulación mental saludable.</p>
+      </div>
+      <div class="modulo-card">
+        <img src="img/Curso completo/eje4.webp" alt="Eje 4" loading="lazy">
+        <h3>Eje 4</h3>
+        <h4>Convivencia consciente</h4>
+        <p>La estructuración de rutinas predecibles en casa. Aprendé a diseñar un entorno seguro y balanceado que prevenga la reactividad y la ansiedad.</p>
+      </div>
+      <div class="modulo-card">
+        <img src="img/Curso completo/eje5.webp" alt="Eje 5" loading="lazy">
+        <h3>Eje 5</h3>
+        <h4>Integración sistémica final</h4>
+        <p>El cierre de un proceso vivencial. Entendés cómo tu propia regulación emocional influye directamente en tu perro. Lo que le enseñás a él, te lo enseñás a vos.</p>
       </div>
     </div>
-  </main>
+    <button class="modulos__flecha modulos__flecha--der" aria-label="Siguiente">→</button>
+  </div>
+</section>
+
+
+    <!-- ========== TESTIMONIOS VISUALES (CARRUSEL) ========== -->
+    <section class="testimonios-visuales">
+    <h2 class="testimonios-visuales__titulo">Experiencias de nuestra comunidad</h2>
+    <div class="carrusel-testimonios">
+        <div class="carrusel-testimonios__item">
+        <img src="img/Curso completo/testimonio1.webp" alt="Laura y Tano">
+        <p>"Dejó de ser una lucha diaria en los paseos para convertirse en un trabajo en equipo. Entender su mundo interno lo cambió todo."</p>
+        <cite>— Laura M. y Tano</cite>
+        </div>
+        <div class="carrusel-testimonios__item">
+        <img src="img/Curso completo/testimonio2.webp" alt="Facundo y Mora">
+        <p>"El único material que encontré que no te habla de dominar o someter al perro, sino de ser coherentes y empáticos. Una joya etológica."</p>
+        <cite>— Facundo G. y Mora</cite>
+        </div>
+    </div>
+    </section>
+
+    <!-- ========== RESULTADOS ========== -->
+    <section class="resultados">
+    <h2>Resultados del enfoque de Tercera Generación</h2>
+    <div class="resultados__stats">
+        <div class="resultados__stat">
+        <span class="numero">96%</span>
+        <p>de las familias reportan una convivencia más armónica y libre de frustraciones en el hogar.</p>
+        </div>
+        <div class="resultados__stat">
+        <span class="numero">92%</span>
+        <p>de reducción en conductas asociadas al estrés, hiperactividad o reactividad ambiental.</p>
+        </div>
+    </div>
+    </section>
+
+    <!-- ========== TESTIMONIOS EXTENDIDOS ========== -->
+    <section class="testimonios-extendidos">
+    <div class="testimonio-extendido">
+        <img src="img/Curso completo/testimonio3.webp" alt="Natalia y Bruno">
+        <p>"Estaba muy frustrada con los métodos de adiestramiento tradicionales que solo me pedían exigirle órdenes vacías a Bruno, lo que generaba más distancia entre nosotros. Este curso digital me dio la sensibilidad y el sustento científico para comprender lo que él realmente necesitaba de mí. Hoy caminamos flojos de correa, disfrutamos los paseos de olfato y convivimos en una calma que antes creía imposible."</p>
+        <cite>— Natalia S. y Bruno</cite>
+    </div>
+    </section>
+
+    <!-- ========== POR QUÉ ELEGIR ========== -->
+    <section class="por-que">
+    <div class="por-que__imagen">
+        <img src="img/Curso completo/por que elegir.webp" alt="Conexión y educación respetuosa">
+    </div>
+    <div class="por-que__texto">
+        <h2>¿Por qué elegir este camino?</h2>
+        <p>Porque no buscamos perros autómatas que obedezcan por miedo o sumisión; buscamos perros equilibrados y tutores conscientes. "Educando desde el Vínculo" no es un manual de recetas mágicas, es un cambio de perspectiva definitivo.</p>
+        <p>Este programa fusiona los últimos avances de la ciencia del comportamiento canino con la empatía emocional, brindándote un método sistémico donde tu propia calma y la comprensión del entorno son los pilares fundamentales para la salud integral de tu compañero de cuatro patas.</p>
+    </div>
+    </section>
+
+    <!-- ========== FAQ FINAL ========== -->
+    <section class="faq-final">
+    <h2>Preguntas frecuentes</h2>
+    
+    <div class="faq-final__pregunta">¿Necesito conocimientos previos de adiestramiento?</div>
+    <div class="faq-final__respuesta">
+        <p>Para nada. El curso está redactado de una manera súper clara, fluida y cercana, estructurado tanto para tutores que arrancan desde cero absoluto y quieren hacer las cosas bien, como para paseadores o profesionales del sector que buscan actualizar su mirada hacia un enfoque más holístico y respetuoso.</p>
+    </div>
+    
+    <div class="faq-final__pregunta">¿Tengo acceso a la comunidad de Skool si compro el curso?</div>
+    <div class="faq-final__respuesta">
+        <p>¡Totalmente! Al adquirir tu material vas a recibir la invitación para sumarte a nuestro espacio interactivo. Ahí vas a poder interactuar con otros tutores comprometidos, debatir casos y enriquecerte del proceso colectivo.</p>
+    </div>
+
+    <div class="faq-final__pregunta">¿Puedo leerlo desde el celular o necesita conexión?</div>
+    <div class="faq-final__respuesta">
+        <p>Está completamente optimizado para dispositivos móviles. Podés descargarlo directamente a tu celular, tablet o computadora y leerlo u hojearlo de forma offline en el parque, durante el paseo o donde vos quieras, sin consumir datos.</p>
+    </div>
+    </section>
+</main>
 
   <footer id="contacto" class="footer">
     <div class="footer__container">
@@ -122,22 +282,118 @@
     </div>
   </footer>
 
-  <!-- Datos estructurados Product -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Curso Digital: Educando desde el Vínculo",
-    "description": "Curso online de educación canina consciente con 6 módulos.",
-    "offers": {
-      "@type": "Offer",
-      "price": "18.00",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock",
-      "url": "https://hotmart.com/es/marketplace/productos/educando-desde-el-vinculo-curso-de-educacion-canina-consciente/K102549535T"
-    }
-  }
-  </script>
   <script src="js/main.js"></script>
+  <script>
+    // ========== GALERÍA DINÁMICA ==========
+    const imagenesProducto = [
+      { src: 'img/Curso completo/curso-completo1.webp', thumb: 'img/Curso completo/curso-completo-1-thumb.webp', alt: 'Portada del curso' },
+      { src: 'img/Curso completo/curso-completo-2.webp', thumb: 'img/Curso completo/curso-completo-2-thumb.webp', alt: 'Interior del material' },
+      { src: 'img/Curso completo/curso-completo-3.webp', thumb: 'img/Curso completo/curso-completo-3-thumb.webp', alt: 'Muestra del contenido' }
+    ];
+
+    const thumbContainer = document.getElementById('thumbnails');
+    const mainImg = document.getElementById('img-principal');
+
+    imagenesProducto.forEach((img, i) => {
+      const thumb = document.createElement('div');
+      thumb.className = 'galeria__miniatura' + (i === 0 ? ' galeria__miniatura--activa' : '');
+      thumb.innerHTML = `<img src="${img.thumb}" alt="${img.alt}">`;
+
+      thumb.addEventListener('click', () => {
+        mainImg.src = img.src;
+        mainImg.alt = img.alt;
+        document.querySelectorAll('.galeria__miniatura').forEach(t => t.classList.remove('galeria__miniatura--activa'));
+        thumb.classList.add('galeria__miniatura--activa');
+      });
+
+      thumbContainer.appendChild(thumb);
+    });
+
+    // ========== BUNDLES ==========
+    const bundles = document.querySelectorAll('.bundle');
+    const btnComprar = document.getElementById('btn-comprar');
+    bundles.forEach(bundle => {
+      bundle.addEventListener('click', () => {
+        bundles.forEach(b => b.classList.remove('bundle--activo'));
+        bundle.classList.add('bundle--activo');
+        const precio = bundle.dataset.precio;
+        btnComprar.textContent = `Comprar ahora – ${precio} USD`;
+        if (precio === '24') {
+          btnComprar.href = 'https://go.hotmart.com/N106601920Q?dp=1'; // actualizar con enlace real del pack
+        } else {
+          btnComprar.href = 'https://hotmart.com/es/marketplace/productos/educando-desde-el-vinculo-curso-de-educacion-canina-consciente/K102549535T';
+        }
+      });
+    });
+
+    // ========== FAQ DESPLEGABLES ==========
+    function toggleFAQ(pregunta) {
+      const respuesta = pregunta.nextElementSibling;
+      const abierta = pregunta.classList.contains('hero-faq__pregunta--abierta') || pregunta.classList.contains('faq-final__pregunta--abierta');
+      pregunta.classList.toggle('hero-faq__pregunta--abierta');
+      pregunta.classList.toggle('faq-final__pregunta--abierta');
+      respuesta.classList.toggle('hero-faq__respuesta--visible');
+      respuesta.classList.toggle('faq-final__respuesta--visible');
+    }
+    document.querySelectorAll('.hero-faq__pregunta, .faq-final__pregunta').forEach(p => {
+      p.addEventListener('click', () => toggleFAQ(p));
+    });
+  
+
+    // ========== SCROLL DEL HERO ==========
+const heroSection = document.querySelector('.producto-hero');
+const infoCol = document.querySelector('.producto-hero__info');
+
+if (heroSection && infoCol) {
+  function handleHeroScroll(e) {
+    // Solo aplica en pantallas grandes (donde el hero está en dos columnas)
+    if (window.innerWidth <= 768) return;
+
+    const atTop = infoCol.scrollTop === 0;
+    const atBottom = infoCol.scrollTop + infoCol.clientHeight >= infoCol.scrollHeight - 1;
+
+    // Si estamos arriba del todo y el usuario intenta subir más (scroll hacia arriba),
+    // o si estamos abajo del todo y el usuario intenta bajar más (scroll hacia abajo),
+    // dejamos que la página se desplace normalmente.
+    if ((atTop && e.deltaY < 0) || (atBottom && e.deltaY > 0)) {
+      return; // no prevenimos el comportamiento por defecto
+    }
+
+    // En cualquier otro caso, desplazamos la columna derecha
+    e.preventDefault();
+    infoCol.scrollTop += e.deltaY;
+  }
+
+  // Escuchamos el evento wheel (ratón/trackpad)
+  heroSection.addEventListener('wheel', handleHeroScroll, { passive: false });
+
+  // Para touch (móvil/tablet), no necesitamos bloquear, ya está apilado
+}
+
+// ========== FLECHAS DEL SLIDER DE MÓDULOS ==========
+const sliderModulos = document.querySelector('.modulos__slider');
+const flechaIzq = document.querySelector('.modulos__flecha--izq');
+const flechaDer = document.querySelector('.modulos__flecha--der');
+
+if (sliderModulos && flechaIzq && flechaDer) {
+  // Cantidad de píxeles que se desplaza con cada clic (ancho de tarjeta + gap aprox.)
+  const scrollAmount = 300;
+
+  flechaIzq.addEventListener('click', () => {
+    sliderModulos.scrollBy({
+      left: -scrollAmount,
+      behavior: 'smooth'
+    });
+  });
+
+  flechaDer.addEventListener('click', () => {
+    sliderModulos.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  });
+}
+
+  </script>
 </body>
 </html>
