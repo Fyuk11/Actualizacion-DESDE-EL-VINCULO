@@ -284,116 +284,83 @@
 
   <script src="js/main.js"></script>
   <script>
-    // ========== GALERÍA DINÁMICA ==========
-    const imagenesProducto = [
-      { src: 'img/Curso completo/curso-completo1.webp', thumb: 'img/Curso completo/curso-completo-1-thumb.webp', alt: 'Portada del curso' },
-      { src: 'img/Curso completo/curso-completo-2.webp', thumb: 'img/Curso completo/curso-completo-2-thumb.webp', alt: 'Interior del material' },
-      { src: 'img/Curso completo/curso-completo-3.webp', thumb: 'img/Curso completo/curso-completo-3-thumb.webp', alt: 'Muestra del contenido' }
-    ];
+  // ========== GALERÍA DINÁMICA ==========
+  const imagenesProducto = [
+    { src: 'img/Curso completo/curso-completo1.webp', thumb: 'img/Curso completo/curso-completo-1-thumb.webp', alt: 'Portada del curso' },
+    { src: 'img/Curso completo/curso-completo-2.webp', thumb: 'img/Curso completo/curso-completo-2-thumb.webp', alt: 'Interior del material' },
+    { src: 'img/Curso completo/curso-completo-3.webp', thumb: 'img/Curso completo/curso-completo-3-thumb.webp', alt: 'Muestra del contenido' }
+  ];
 
-    const thumbContainer = document.getElementById('thumbnails');
-    const mainImg = document.getElementById('img-principal');
+  const thumbContainer = document.getElementById('thumbnails');
+  const mainImg = document.getElementById('img-principal');
 
-    imagenesProducto.forEach((img, i) => {
-      const thumb = document.createElement('div');
-      thumb.className = 'galeria__miniatura' + (i === 0 ? ' galeria__miniatura--activa' : '');
-      thumb.innerHTML = `<img src="${img.thumb}" alt="${img.alt}">`;
+  imagenesProducto.forEach((img, i) => {
+    const thumb = document.createElement('div');
+    thumb.className = 'galeria__miniatura' + (i === 0 ? ' galeria__miniatura--activa' : '');
+    thumb.innerHTML = `<img src="${img.thumb}" alt="${img.alt}">`;
 
-      thumb.addEventListener('click', () => {
-        mainImg.src = img.src;
-        mainImg.alt = img.alt;
-        document.querySelectorAll('.galeria__miniatura').forEach(t => t.classList.remove('galeria__miniatura--activa'));
-        thumb.classList.add('galeria__miniatura--activa');
-      });
-
-      thumbContainer.appendChild(thumb);
+    thumb.addEventListener('click', () => {
+      mainImg.src = img.src;
+      mainImg.alt = img.alt;
+      document.querySelectorAll('.galeria__miniatura').forEach(t => t.classList.remove('galeria__miniatura--activa'));
+      thumb.classList.add('galeria__miniatura--activa');
     });
 
-    // ========== BUNDLES ==========
-    const bundles = document.querySelectorAll('.bundle');
-    const btnComprar = document.getElementById('btn-comprar');
-    bundles.forEach(bundle => {
-      bundle.addEventListener('click', () => {
-        bundles.forEach(b => b.classList.remove('bundle--activo'));
-        bundle.classList.add('bundle--activo');
-        const precio = bundle.dataset.precio;
-        btnComprar.textContent = `Comprar ahora – ${precio} USD`;
-        if (precio === '24') {
-          btnComprar.href = 'https://go.hotmart.com/N106601920Q?dp=1'; // actualizar con enlace real del pack
-        } else {
-          btnComprar.href = 'https://hotmart.com/es/marketplace/productos/educando-desde-el-vinculo-curso-de-educacion-canina-consciente/K102549535T';
-        }
-      });
+    thumbContainer.appendChild(thumb);
+  });
+
+  // ========== BUNDLES ==========
+  const bundles = document.querySelectorAll('.bundle');
+  const btnComprar = document.getElementById('btn-comprar');
+  bundles.forEach(bundle => {
+    bundle.addEventListener('click', () => {
+      bundles.forEach(b => b.classList.remove('bundle--activo'));
+      bundle.classList.add('bundle--activo');
+      const precio = bundle.dataset.precio;
+      btnComprar.textContent = `Comprar ahora – ${precio} USD`;
+      if (precio === '24') {
+        btnComprar.href = 'https://go.hotmart.com/N106601920Q?dp=1'; // enlace del pack
+      } else {
+        btnComprar.href = 'https://hotmart.com/es/marketplace/productos/educando-desde-el-vinculo-curso-de-educacion-canina-consciente/K102549535T';
+      }
     });
+  });
 
-    // ========== FAQ DESPLEGABLES ==========
-    function toggleFAQ(pregunta) {
-      const respuesta = pregunta.nextElementSibling;
-      const abierta = pregunta.classList.contains('hero-faq__pregunta--abierta') || pregunta.classList.contains('faq-final__pregunta--abierta');
-      pregunta.classList.toggle('hero-faq__pregunta--abierta');
-      pregunta.classList.toggle('faq-final__pregunta--abierta');
-      respuesta.classList.toggle('hero-faq__respuesta--visible');
-      respuesta.classList.toggle('faq-final__respuesta--visible');
-    }
-    document.querySelectorAll('.hero-faq__pregunta, .faq-final__pregunta').forEach(p => {
-      p.addEventListener('click', () => toggleFAQ(p));
-    });
-  
-
-    // ========== SCROLL DEL HERO ==========
-const heroSection = document.querySelector('.producto-hero');
-const infoCol = document.querySelector('.producto-hero__info');
-
-if (heroSection && infoCol) {
-  function handleHeroScroll(e) {
-    // Solo aplica en pantallas grandes (donde el hero está en dos columnas)
-    if (window.innerWidth <= 768) return;
-
-    const atTop = infoCol.scrollTop === 0;
-    const atBottom = infoCol.scrollTop + infoCol.clientHeight >= infoCol.scrollHeight - 1;
-
-    // Si estamos arriba del todo y el usuario intenta subir más (scroll hacia arriba),
-    // o si estamos abajo del todo y el usuario intenta bajar más (scroll hacia abajo),
-    // dejamos que la página se desplace normalmente.
-    if ((atTop && e.deltaY < 0) || (atBottom && e.deltaY > 0)) {
-      return; // no prevenimos el comportamiento por defecto
-    }
-
-    // En cualquier otro caso, desplazamos la columna derecha
-    e.preventDefault();
-    infoCol.scrollTop += e.deltaY;
+  // ========== FAQ DESPLEGABLES ==========
+  function toggleFAQ(pregunta) {
+    const respuesta = pregunta.nextElementSibling;
+    const abierta = pregunta.classList.contains('hero-faq__pregunta--abierta') || pregunta.classList.contains('faq-final__pregunta--abierta');
+    pregunta.classList.toggle('hero-faq__pregunta--abierta');
+    pregunta.classList.toggle('faq-final__pregunta--abierta');
+    respuesta.classList.toggle('hero-faq__respuesta--visible');
+    respuesta.classList.toggle('faq-final__respuesta--visible');
   }
-
-  // Escuchamos el evento wheel (ratón/trackpad)
-  heroSection.addEventListener('wheel', handleHeroScroll, { passive: false });
-
-  // Para touch (móvil/tablet), no necesitamos bloquear, ya está apilado
-}
-
-// ========== FLECHAS DEL SLIDER DE MÓDULOS ==========
-const sliderModulos = document.querySelector('.modulos__slider');
-const flechaIzq = document.querySelector('.modulos__flecha--izq');
-const flechaDer = document.querySelector('.modulos__flecha--der');
-
-if (sliderModulos && flechaIzq && flechaDer) {
-  // Cantidad de píxeles que se desplaza con cada clic (ancho de tarjeta + gap aprox.)
-  const scrollAmount = 300;
-
-  flechaIzq.addEventListener('click', () => {
-    sliderModulos.scrollBy({
-      left: -scrollAmount,
-      behavior: 'smooth'
-    });
+  document.querySelectorAll('.hero-faq__pregunta, .faq-final__pregunta').forEach(p => {
+    p.addEventListener('click', () => toggleFAQ(p));
   });
 
-  flechaDer.addEventListener('click', () => {
-    sliderModulos.scrollBy({
-      left: scrollAmount,
-      behavior: 'smooth'
-    });
-  });
-}
+  // ========== FLECHAS DEL SLIDER DE MÓDULOS ==========
+  const sliderModulos = document.querySelector('.modulos__slider');
+  const flechaIzq = document.querySelector('.modulos__flecha--izq');
+  const flechaDer = document.querySelector('.modulos__flecha--der');
 
-  </script>
+  if (sliderModulos && flechaIzq && flechaDer) {
+    const scrollAmount = 300;
+
+    flechaIzq.addEventListener('click', () => {
+      sliderModulos.scrollBy({
+        left: -scrollAmount,
+        behavior: 'smooth'
+      });
+    });
+
+    flechaDer.addEventListener('click', () => {
+      sliderModulos.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    });
+  }
+</script>
 </body>
 </html>
